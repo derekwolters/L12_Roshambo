@@ -97,49 +97,21 @@ namespace L12_Roshambo
             }
 
             //output the winner of the game
-            if (c1 == (int)Roshambo.Rock && 
-                    c2 == (int)Roshambo.Rock)
-            {                
-                Console.WriteLine("Draw!");
-            }
-            else if (c1 == (int)Roshambo.Rock && 
-                        c2 == (int)Roshambo.Paper)
-            {
-                Console.WriteLine(secondPlayerID);
-            }
-            else if (c1 == (int)Roshambo.Rock && 
-                        c2 == (int)Roshambo.Scissors)
-            {
-                Console.WriteLine(firstPlayerID);
-            }
-            else if (c1 == (int)Roshambo.Paper && 
-                        c2 == (int)Roshambo.Rock)
-            {
-                Console.WriteLine(firstPlayerID);
-            }
-            else if (c1 == (int)Roshambo.Paper && 
-                        c2 == (int)Roshambo.Paper)
+            if (c1 == c2)
             {
                 Console.WriteLine("Draw!");
             }
-            else if (c1 == (int)Roshambo.Paper && 
-                        c2 == (int)Roshambo.Scissors)
-            {
-                Console.WriteLine(secondPlayerID);
-            }
-            else if (c1 == (int)Roshambo.Scissors && 
-                        c2 == (int)Roshambo.Rock)
-            {
-                Console.WriteLine(secondPlayerID);
-            }
-            else if (c1 == (int)Roshambo.Scissors && 
-                        c2 == (int)Roshambo.Paper)
-            {
+            else if(
+                (c1 == (int)Roshambo.Rock && c2 != (int)Roshambo.Paper) ||
+                (c1 == (int)Roshambo.Paper && c2 != (int)Roshambo.Scissors) ||
+                (c1 == (int)Roshambo.Scissors && c2 != (int)Roshambo.Rock)
+                )
+            { 
                 Console.WriteLine(firstPlayerID);
             }
             else
             {
-                Console.WriteLine("Draw!");
+                Console.WriteLine(secondPlayerID);
             }
         }
     }
