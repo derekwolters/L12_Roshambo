@@ -10,9 +10,14 @@
 
 namespace L12_Roshambo
 {
-    class Human
+    class Human : IPlayer
     {
-        private string _playerName;
+        private string _playerName = "";
+
+        public Human() {
+                Console.WriteLine("What is your name?");
+                _playerName = Console.ReadLine();            
+        }
 
         public string name
         {

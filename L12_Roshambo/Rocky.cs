@@ -18,7 +18,7 @@ namespace L12_Roshambo
             }
         }
 
-        public int generateRoshambo()
+        public int generateRoshambo(string playerID)
         {
             int generatedChoice = 1;
             return generatedChoice;

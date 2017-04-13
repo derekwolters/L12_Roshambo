@@ -15,6 +15,6 @@ namespace L12_Roshambo
             set;
         }
 
-        int generateRoshambo();
+        int generateRoshambo(string playerID);
     }
 }

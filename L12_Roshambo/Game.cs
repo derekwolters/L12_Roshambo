@@ -15,13 +15,12 @@ namespace L12_Roshambo
         {
             //instantiate varaibles that don't need to be reset
             bool keepGoing = true;
+            string player2Name = "";
             Human Human = new Human();
+            Human Human2 = null;
             Rocky Rocky = new Rocky();
             Bullwinkle Bullwinkle = new Bullwinkle();
-            string player2Name = "";
-
-            Console.WriteLine("What is your name?");
-            Human.name = Console.ReadLine();
+            
             Console.WriteLine("Hi " + Human.name + "!");
 
             while (keepGoing)
@@ -38,26 +37,23 @@ namespace L12_Roshambo
                 //choose whom to play the game against
                 if(humanChoice == 1)
                 {                   
-                    secondPlayerChoice = Rocky.generateRoshambo();
+                    secondPlayerChoice = Rocky.generateRoshambo("");
                     player2Name = Rocky.name;
                 }
                 else if (humanChoice == 2)
                 {                    
-                    secondPlayerChoice = Bullwinkle.generateRoshambo();
+                    secondPlayerChoice = Bullwinkle.generateRoshambo("");
                     player2Name = Bullwinkle.name;
                 }
                 else
                 {
-                    Console.WriteLine("Multiplayer mode unlocked!!!");                    
-                    Human Human2 = new Human();
-                    Console.WriteLine("What is your name Player 2?");
-
-                    if (player2Name == "")
+                    Console.WriteLine("Multiplayer mode unlocked!!!");
+                    if(Human2 == null)
                     {
-                        Human2.name = Console.ReadLine();
+                        Human2 = new Human();
                         player2Name = Human2.name;
                     }
-                    
+                                        
                     secondPlayerChoice = Human2.generateRoshambo(player2Name);
                 }
                 

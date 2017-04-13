@@ -25,7 +25,7 @@ namespace L12_Roshambo
             }
         }
 
-        public int generateRoshambo()
+        public int generateRoshambo(string playerID)
         {
             Random rnd = new Random();
             
