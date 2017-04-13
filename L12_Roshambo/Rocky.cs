@@ -4,26 +4,18 @@ namespace L12_Roshambo
 {
     class Rocky : IPlayer
     {
-        private string _player { get; set; }
-        private int generatedChoice { get; }
+        private string _playerName = "Rocky";
+
         public string name
         {
             get
             {
-                return _player;
+                return _playerName;
             }
             set
             {
-                _player = value;
+                _playerName = "";
             }
-        }
-
-        public int roshamboValue
-        {
-            get
-            {
-                return generatedChoice;
-            }            
         }
 
         public int generateRoshambo()

@@ -12,31 +12,23 @@ namespace L12_Roshambo
 {
     class Human
     {
-        private string _player { get; set; }
-        private int generatedChoice { get; }
+        private string _playerName;
+
         public string name
         {
             get
             {
-                return _player;
+                return _playerName;
             }
             set
             {
-                _player = value;
-            }
-        }
-
-        public int roshamboValue
-        {
-            get
-            {
-                return generatedChoice;
+                _playerName = value;
             }
         }
 
         public int generateRoshambo(string playerID)
         {
-            Console.WriteLine(playerID + "choose your winning tool:");
+            Console.WriteLine(playerID + ", choose your winning tool:");
             Console.WriteLine("1) Rock");
             Console.WriteLine("2) Paper");
             Console.WriteLine("3) Scissors");

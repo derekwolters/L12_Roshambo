@@ -15,11 +15,6 @@ namespace L12_Roshambo
             set;
         }
 
-        int roshamboValue
-        {
-            get;            
-        }
-
         int generateRoshambo();
     }
 }

@@ -11,26 +11,18 @@ namespace L12_Roshambo
 {
     class Bullwinkle : IPlayer
     {
-        private string _player { get; set; }
-        private int generatedChoice { get; }
+        private string _playerName = "Bullwinkle";
+
         public string name
         {
             get
             {
-                return _player;
+                return _playerName;
             }
             set
             {
-                _player = value;
+                _playerName = value ;
             }
-        }
-
-        public int roshamboValue
-        {
-            get
-            {
-                return generatedChoice;
-            }            
         }
 
         public int generateRoshambo()
