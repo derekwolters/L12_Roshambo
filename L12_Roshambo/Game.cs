@@ -29,7 +29,6 @@ namespace L12_Roshambo
                 //instantiate variables that need to be reset b/t each game
                 int humanChoice = 0;
                 int secondPlayerChoice = 0;           
-                bool isMultiplayer = false;                       
 
                 Console.WriteLine("Do you want to play against 1)" + 
                                     Rocky.name + " or " + "2)" + 
@@ -49,8 +48,7 @@ namespace L12_Roshambo
                 }
                 else
                 {
-                    Console.WriteLine("Multiplayer mode unlocked!!!");
-                    isMultiplayer = true;
+                    Console.WriteLine("Multiplayer mode unlocked!!!");                    
                     Human Human2 = new Human();
                     Console.WriteLine("What is your name Player 2?");
 
@@ -67,34 +65,19 @@ namespace L12_Roshambo
                 humanChoice = Human.generateRoshambo(Human.name);
 
                 //compare the input
-                CompareResults(humanChoice, secondPlayerChoice, isMultiplayer,
+                CompareResults(humanChoice, secondPlayerChoice, 
                                     Human.name, player2Name);
 
                 Exit.ExitProgram();
             }            
         }
         
-        //compare the results of the 2 player's inputs
-        static void CompareResults (int c1, int c2, bool multi, string n1, 
-                                                                string n2)
+        //compare and output the results of the 2 player's inputs
+        static void CompareResults (int c1, int c2,  string n1, string n2)
         {
-            //set default player ID return values
-            string firstPlayerID = "You win!";
-            string secondPlayerID = "Computer wins.";
-            
             //output each player's choices
-            if (multi)
-            {
-                Console.WriteLine(n1 + " picked: " + (Roshambo)c1);
-                Console.WriteLine(n2 + " picked: " + (Roshambo)c2);
-                firstPlayerID = n1 + " wins!";
-                secondPlayerID = n2 + " wins!";
-            }
-            else
-            {
-                Console.WriteLine(n1 + " picked: " + (Roshambo)c1);
-                Console.WriteLine(n2 + " picked: " + (Roshambo)c2);
-            }
+            Console.WriteLine(n1 + " picked: " + (Roshambo)c1);
+            Console.WriteLine(n2 + " picked: " + (Roshambo)c2);                    
 
             //output the winner of the game
             if (c1 == c2)
@@ -107,11 +90,11 @@ namespace L12_Roshambo
                 (c1 == (int)Roshambo.Scissors && c2 != (int)Roshambo.Rock)
                 )
             { 
-                Console.WriteLine(firstPlayerID);
+                Console.WriteLine(n1 + " wins!");
             }
             else
             {
-                Console.WriteLine(secondPlayerID);
+                Console.WriteLine(n2 + " wins!");
             }
         }
     }
